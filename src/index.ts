@@ -10,6 +10,7 @@ import { setupGenerateRoute } from './routes/generate';
 import { setupResultRoute } from './routes/result';
 import { setupConflictsRoute } from './routes/conflicts';
 import { setupTestsRoute } from './routes/tests';
+import { setupMarkdownRoutes } from './routes/markdowns';
 
 const PORT = parseInt(process.env.PORT || '3001', 10);
 const HOST = process.env.HOST || '0.0.0.0';
@@ -45,6 +46,10 @@ async function start() {
         'GET /api/result/:id',
         'POST /api/detect-conflicts',
         'POST /api/tests-plan',
+        'POST /api/markdowns',
+        'GET /api/markdowns',
+        'GET /api/markdowns/:id',
+        'DELETE /api/markdowns/:id',
       ],
     };
   });
@@ -54,6 +59,7 @@ async function start() {
   await setupResultRoute(fastify);
   await setupConflictsRoute(fastify);
   await setupTestsRoute(fastify);
+  await setupMarkdownRoutes(fastify);
 
   // Start server
   try {

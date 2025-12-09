@@ -28,6 +28,7 @@
     "@fastify/cors": "^9.0.1",
     "dotenv": "^16.6.1",
     "fastify": "^4.25.2",
+    "firebase-admin": "^13.6.0",
     "openai": "^4.52.7",
     "zod": "^3.22.4"
   },
